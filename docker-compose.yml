@@ -1,0 +1,18 @@
+version: '3'
+
+services:
+    redis_cluster:
+        build:
+            context: ./
+            dockerfile: redis_cluster_dockerfile
+        container_name: redis_cluster
+        restart: always
+        ports:
+            - 7001:7001
+            - 7002:7002
+            - 7003:7003
+            - 7004:7004
+            - 7005:7005
+            - 7006:7006
+        volumes:
+            - ${PWD}/redis_tmp.conf:/redis_data/redis_tmp.conf

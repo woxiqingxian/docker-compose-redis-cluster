@@ -1,0 +1,6 @@
+FROM redis:5.0.3-alpine3.9
+
+COPY startup.sh /usr/local/bin
+RUN chmod +x /usr/local/bin/startup.sh
+
+CMD ["startup.sh"]
